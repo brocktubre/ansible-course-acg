@@ -1,0 +1,7 @@
+---
+  - hosts: control
+    tasks:
+      - name: 'Stop webserver 1'
+        command: aws --profile AWSCliUser --region us-east-1 ec2 stop-instances --instance-ids i-00229516c67ccff99
+      - name: 'Stop webserver 2'
+        command: aws --profile AWSCliUser --region us-east-1 ec2 stop-instances --instance-ids i-04011456478e43540

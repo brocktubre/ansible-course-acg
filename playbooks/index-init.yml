@@ -6,4 +6,4 @@
       - name: 'Create simple index.html page'
         copy: src=../index.html dest=/var/www/html/index.html
       - name: 'Restarting Apache'
-        command: service httpd restart
+        service: name=httpd state=restarted
