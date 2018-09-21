@@ -1,6 +1,5 @@
 ---
-  - import_playbook: start-instances.yml
   - import_playbook: yum-init.yml
   - import_playbook: install-httpd.yml
   - import_playbook: start-httpd.yml
-  - import_playbook: index-init.yml
+  - import_playbook: angular-upload.yml
