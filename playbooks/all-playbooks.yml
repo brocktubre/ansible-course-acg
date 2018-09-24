@@ -1,5 +1,5 @@
 ---
   - import_playbook: yum-init.yml
-  - import_playbook: install-httpd.yml
-  - import_playbook: start-httpd.yml
-  - import_playbook: angular-upload.yml
+  - import_playbook: setup-services.yml
+  - import_playbook: index-init.yml
+  - import_playbook: setup-lb.yml

@@ -1,9 +1,10 @@
 ---
   - hosts: webserver
-    become_method: sudo
-    become: yes
+    become: true
     tasks:
-      - name: 'Create simple index.html page'
-        copy: src=../index.html dest=/var/www/html/index.html
-      - name: 'Restarting Apache'
-        service: name=httpd state=restarted
+      - name: Create simple index.html page
+        copy: src=../index.html dest=/var/www/html/index.html mode=0755
+        notify: restart httpd # will only run if there is a change in index.html page
+    handlers: 
+      - name: restart httpd
+        service: name=httpd state=restarted 

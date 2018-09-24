@@ -1,0 +1,20 @@
+---
+- hosts: loadbalancer
+  become: true
+  tasks:
+    - service: name=httpd state=stopped
+
+- hosts: webserver
+  become: true
+  tasks:
+    - service: name=httpd state=stopped
+
+- hosts: webserver
+  become: true
+  tasks:
+    - service: name=httpd state=started
+
+- hosts: loadbalancer
+  become: true
+  tasks:
+    - service: name=httpd state=started
