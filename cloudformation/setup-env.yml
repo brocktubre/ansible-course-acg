@@ -89,18 +89,21 @@ Resources:
       InstanceId: !Ref LnEc2InstanceLoadBalancer
 Outputs:
   LnPublicIpAddressInstance1:
+    Description: The Public IP address for EC2 instances
     Value: !GetAtt
       - LnEc2InstanceWebServer1
       - PublicIp
   LnPublicIpAddressInstance2:
+    Description: The Public IP address for EC2 instances
     Value: !GetAtt
       - LnEc2InstanceWebServer2
       - PublicIp
   LnPublicIpAddressLoadBalancer:
+    Description: The Public IP address for EC2 instances
     Value: !GetAtt
       - LnEc2InstanceLoadBalancer
       - PublicIp
-  Website:
+  WebsiteLink:
     Description: The Public DNS for the EC2 Instance
     Value: !Sub 'http://${LnEc2InstanceLoadBalancer.PublicDnsName}'
        

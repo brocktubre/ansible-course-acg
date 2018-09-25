@@ -2,7 +2,12 @@
   - hosts: loadbalancer
     become: true
     tasks:
-      - name: Create loadbalaner config
-        copy: src=../config/lb.conf dest=/etc/httpd/conf.d
+      - name: Creating template
+        template:
+          src: ../config/lb.template
+          dest:  /etc/httpd/conf.d/lb.conf
+          owner: bin
+          group: wheel
+          mode: 064
       - name: Restarting Apache
         service: name=httpd state=restarted

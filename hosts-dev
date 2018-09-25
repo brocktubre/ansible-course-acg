@@ -1,9 +1,9 @@
 [webserver]
-34.237.42.254
-34.195.42.122		
+18.235.9.98
+35.170.188.215
 
 [loadbalancer]
-35.174.210.186
+18.205.126.246
 
 [local]
 control ansible_connection=local

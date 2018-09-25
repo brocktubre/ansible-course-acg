@@ -1,8 +1,9 @@
 ProxyRequests off
 <Proxy balancer://webfarm >
-  BalancerMember http://34.237.42.254
-  BalancerMember http://34.195.42.122
-  ProxySet lbmethod=byrequests
+  {% for host in groups['webserver'] %}
+    BalancerMember http://{{host}}
+  {% endfor %}
+    ProxySet lbmethod=byrequests
 </Proxy>
 
 <Location /balancer-manager>
