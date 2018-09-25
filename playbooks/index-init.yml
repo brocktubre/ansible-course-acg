@@ -2,8 +2,8 @@
   - hosts: webserver
     become: true
     tasks:
-      - name: Create simple index.html page
-        copy: src=../index.html dest=/var/www/html/index.html mode=0755
+      - name: Create simple index page
+        copy: src=../index.php dest=/var/www/html/index.php mode=0755
         notify: restart httpd # will only run if there is a change in index.html page
     handlers: 
       - name: restart httpd

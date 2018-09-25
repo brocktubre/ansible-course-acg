@@ -100,3 +100,7 @@ Outputs:
     Value: !GetAtt
       - LnEc2InstanceLoadBalancer
       - PublicIp
+  Website:
+    Description: The Public DNS for the EC2 Instance
+    Value: !Sub 'http://${LnEc2InstanceLoadBalancer.PublicDnsName}'
+       
