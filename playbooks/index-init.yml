@@ -7,4 +7,6 @@
         notify: restart httpd # will only run if there is a change in index.html page
     handlers: 
       - name: restart httpd
-        service: name=httpd state=restarted 
+        service:
+          name: httpd
+          state: restarted 

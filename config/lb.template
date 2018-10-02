@@ -1,14 +1,16 @@
 ProxyRequests off
-<Proxy balancer://webfarm >
+<Proxy balancer://webcluster >
+  {# {% for host in groups.webserver %} another way to call for loop #}
   {% for host in groups['webserver'] %}
     BalancerMember http://{{host}}
   {% endfor %}
     ProxySet lbmethod=byrequests
 </Proxy>
 
+# Optional
 <Location /balancer-manager>
   SetHandler balancer-manager
 </Location>
 
 ProxyPass /balancer-manager !
-ProxyPass / balancer://webfarm/
+ProxyPass / balancer://webcluster/
