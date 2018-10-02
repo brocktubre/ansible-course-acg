@@ -1,0 +1,20 @@
+---
+  - hosts: webserver
+    become: true
+    tasks:
+      - name: Check webservers status
+        command: service httpd status
+        changed_when: false
+
+      - name: Verify Apache is listening on 80
+        wait_for: port=80 timeout=1
+  
+  - hosts: loadbalancer
+    become: true
+    tasks:
+      - name: Check webservers status
+        command: service httpd status
+        changed_when: false
+
+      - name: Verify Apache is listening on 80
+        wait_for: port=80 timeout=1
