@@ -5,8 +5,15 @@
       - name: Create simple index page
         copy: src=../index.php dest=/var/www/html/index.php mode=0755
         notify: restart httpd # will only run if there is a change in index.html page
+
+      - name: Configure php.ini
+        lineinfile:
+          path: /etc/php.ini
+          regexp: ^short_open_tag
+          line: 'short_open_tag=On'
+        notify: restart httpd
     handlers: 
       - name: restart httpd
         service:
           name: httpd
-          state: restarted 
+          state: restarted
