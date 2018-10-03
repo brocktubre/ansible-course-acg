@@ -12,8 +12,5 @@
           regexp: ^short_open_tag
           line: 'short_open_tag=On'
         notify: restart httpd
-    handlers: 
-      - name: restart httpd
-        service:
-          name: httpd
-          state: restarted
+    handlers:
+    - include: handlers.yml

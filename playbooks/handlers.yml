@@ -1,0 +1,6 @@
+---
+# Notice we do not have to use handlers tag 
+- name: restart httpd
+  service:
+    name: httpd
+    state: restarted
