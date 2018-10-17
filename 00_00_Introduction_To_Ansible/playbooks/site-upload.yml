@@ -2,6 +2,8 @@
   - hosts: webservers
     tasks:
       - name: Upload AngularJS App
-        copy:
+        synchronize:
           src: ../site
           dest: /tmp
+          rsync_opts:
+            - "--exclude=node_modules"

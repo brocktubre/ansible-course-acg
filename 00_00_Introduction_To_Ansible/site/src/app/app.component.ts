@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Let The Free Times Roll';
+  title = 'Introduction To Ansible';
   date = new Date().getFullYear();
 }

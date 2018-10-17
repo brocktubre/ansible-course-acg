@@ -9,66 +9,48 @@
 <div class="container-fluid background">
     <div class="container tools-body">
       <div class="row">
-      <div class="header text-center">
-        <div class="jumbotron">
-            <h1 class="display-3">{{title}}</h1>
-            <p class="lead">Manually uploading and deploying code to update applications is a thing of the past. Using AWS tools like CodePipeline, CodeBuild, & S3 students will build a system that allows them to write and push code that triggers seamless and automatic deployments. Students will also setup an email notification that is sent to developers if a status change is made in the build process using CloudWatch & SNS. Let the free times roll with Continuous Deployments.</p>
-            <p><a class="btn btn btn-success" href="https://github.com/ACloudGuru/Let_the_Free_Times_Roll_BT" role="button">See source code <i class="fa fa-code"></i></a></p>
-          </div>
-          <img class="mx-auto d-block" style="max-width: 1000px; padding-top: 50px;"src="assets/continious_deployment.png" alt="Continious Deployment Architecture diagram">
+        <div class="header text-center">
+          <div class="jumbotron">
+              <img class="ansible-logo" src="../assets/ansible_logo.png" alt="ansible logo"/>
+              <h1 class="display-3">{{title}}</h1>
+              <p class="lead">Being able to configure and update your environments is an important part of DevOps. Doing these tasks quickly and easily is even more important. Ansible helps solve the problem of manually configuring servers one-by-one. Using Ansible as an automation tool System Administrators can update and configure servers from a single machine. This course is a way to learn how to setup Ansible and a sandbox environment to learn in. You’ll learn how to manage servers using Ansible playbooks, stand up a new environments, and monitor your cloud infrastructure.</p>
+              <p><a class="btn btn btn-success" href="https://github.com/ACloudGuru-Resources/Course_Introduction_to_Ansible" role="button">See source code <i class="fa fa-code"></i></a></p>
+            </div>
+            <img class="mx-auto d-block" style="max-width: 1000px; padding-top: 50px;"src="../assets/ansible-setup-diagram.png" alt="Ansible setup diagram">
+        </div>
       </div>
-    </div>
-    <div class="row">
-        <div class="col-2">
-          <img class="img-icon" src="assets/DeveloperTools_AWSCodePipeline_LARGE.png" alt="AWS Code Pipeline icon">
-        </div>
-        <div class="col-10">
-          <h5><a href="https://aws.amazon.com/codepipeline/">CodePipeline</a></h5>
-          <p>AWS CodePipeline is a continuous integration and continuous delivery service for fast and reliable application and infrastructure updates. CodePipeline builds, tests, and deploys your code every time there is a code change, based on the release process models you define. This enables you to rapidly and reliably deliver features and updates. You can easily build out an end-to-end solution by using our pre-built plugins for popular third-party services like GitHub or integrating your own custom plugins into any stage of your release process. With AWS CodePipeline, you only pay for what you use. There are no upfront fees or long-term commitments.</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-2">
-          <img class="img-icon" src="assets/DeveloperTools_AWSCodeBuild_LARGE.png" alt="AWS Code Build icon">
-        </div>
-        <div class="col-10">
-            <h5><a href="https://aws.amazon.com/codebuild/">CodeBuild</a></h5>
-            <p>AWS CodeBuild is a fully managed build service that compiles source code, runs tests, and produces software packages that are ready to deploy. With CodeBuild, you don’t need to provision, manage, and scale your own build servers. CodeBuild scales continuously and processes multiple builds concurrently, so your builds are not left waiting in a queue. You can get started quickly by using prepackaged build environments, or you can create custom build environments that use your own build tools. With CodeBuild, you are charged by the minute for the compute resources you use.</p>
-        </div>
-    </div>
-    <div class="row" >
-        <div class="col-2">
-          <img class="img-icon" src="assets/Storage_AmazonS3_bucket_LARGE.png" alt="AWS S3 icon">
-        </div>
-        <div class="col-10">
-            <h5><a href="https://aws.amazon.com/getting-started/projects/host-static-website/">S3 Hosting</a></h5>
-            <p>Static websites deliver HTML, JavaScript, images, video and other files to your website visitors, and contain no application code. They are best for sites with few authors and relatively infrequent content changes, typically personal and simple marketing websites. Static websites are very low cost, provide high-levels of reliability, require almost no IT administration, and scale to handle enterprise-level traffic with no additional work.</p>
+      <div class="row">
+        <div class="col-6">
+          <div class="row info-item">
+              <h3> 1. Course Introduction </h3>
+              <p> Discuss what Ansible is and some of its use cases. We will learn about why, when, and where it is used and similar tools used in the industry today.</p>
           </div>
-    </div>
-    <div class="row" >
-        <div class="col-2">
-          <img class="img-icon" src="assets/Messaging_AmazonSNS_LARGE.png" alt="AWS SNS icon">
-        </div>
-        <div class="col-10">
-            <h5><a href="https://aws.amazon.com/sns/">SNS</a></h5>
-            <p>Amazon Simple Notification Service (SNS) is a flexible, fully managed pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients. With SNS you can fan-out messages to a large number of subscribers, including distributed systems and services, and mobile devices. It is easy to set up, operate, and reliably send notifications to all your endpoints – at any scale. You can get started using SNS in a matter of minutes using the AWS Management Console, AWS Command Line Interface, or using the AWS SDK with just three simple APIs. SNS eliminates the complexity and overhead associated with managing and operating dedicated messaging software and infrastructure.</p>
+          <div class="row info-item">
+              <h3> 2. Setup Enviornment </h3>
+              <p> We will learn how to install Ansible and other tools get your system ready for hand on labs and experience you’ll use in this course. </p>
           </div>
-    </div>
-    <div class="row" >
-        <div class="col-2">
-          <img class="img-icon" src="assets/ManagementTools_AmazonCloudWatch_LARGE.png" alt="AWS Cloud Watch icon">
+          <div class="row info-item">
+              <h3> 3. Tasks </h3>
+              <p> Learn about adhoc commands and how to use the Ansible command line tools. Gain experience with running our first Ansible commands. </p>
+          </div>
         </div>
-        <div class="col-10">
-            <h5><a href="https://aws.amazon.com/cloudwatch/">CloudWatch</a></h5>
-            <p>Static websites deliver HTML, JavaScript, images, video and other files to your website visitors, and contain no application code. They are best for sites with few authors and relatively infrequent content changes, typically personal and simple marketing websites. Static websites are very low cost, provide high-levels of reliability, require almost no IT administration, and scale to handle enterprise-level traffic with no additional work.</p>
+        <div class="col-6">
+            <div class="row info-item">
+                <h3> 4. Playbooks </h3>
+                <p> Hands on experience with writing and running playbooks to achieve deployment, automation and orchestration.</p>
+            </div>
+            <div class="row info-item">
+                <h3> 5. Using Varibles </h3>
+                <p> Learn how to refactor playbooks by using variables and making our automation more modular. </p>
+            </div>
+            <div class="row info-item">
+                <h3> 6. After Thoughts </h3>
+                <p> We will go over common issues, testing playbooks, the future of automation as code and cleaning up our environment.  </p>
+            </div>
         </div>
-    </div>
+      </div>
     <footer class="footer">
       <p>© Copyright {{date}}</p>
     </footer>
   </div>
 </div>
-
-
-
-
