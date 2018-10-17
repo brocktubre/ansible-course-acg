@@ -1,0 +1,7 @@
+---
+  - hosts: webservers
+    tasks:
+      - name: Upload AngularJS App
+        copy:
+          src: ../site
+          dest: /tmp

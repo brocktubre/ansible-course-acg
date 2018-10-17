@@ -1,22 +1,21 @@
 ---
-  - hosts: webserver
+  - hosts: webservers
     become: true
     tasks:
       - name: Install webserver services
         yum: name={{item}} state=latest # jinja injection engine
         with_items: # installs these in parallel
           - httpd
-          - php
-      - name: Ensure Apache web server starts
+      - name: Ensure Apache starts
         service: name=httpd state=started enabled=yes # look at service module documentation started, stopped, restarted. 
                                                       # enabled=yes will start on start up of the box
-  - hosts: loadbalancer
+  - hosts: loadbalancers
     become: true
     tasks:
-      - name: Install webserver services
+      - name: Install loadbalancer services
         yum: name={{item}} state=latest # jinja injection engine
-        with_items: # installs these in parallel
+        with_items:
           - httpd
-      - name: Ensure Apache web server starts
+      - name: Ensure Apache starts
         service: name=httpd state=started enabled=yes # look at service module documentation started, stopped, restarted. 
                                                       # enabled=yes will start on start up of the box

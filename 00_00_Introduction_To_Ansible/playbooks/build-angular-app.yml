@@ -1,0 +1,36 @@
+---
+  - hosts: webservers
+    become: true
+    tasks:
+      - name: Get NodeJS Installer
+        get_url: 
+          url: https://rpm.nodesource.com/setup_10.x
+          dest: /tmp/nodejs.sh
+          mode: 600
+      - name: Execute NodeJS script
+        shell: /tmp/nodejs.sh
+      - name: Install NodeJS
+        yum:
+          name: nodejs
+          state: present
+      - name: Remove node_modules
+        file:
+          name: /tmp/site/node_modules
+          state: absent
+      - name: Install npm dependencies
+        npm:
+          name: install
+          path: /tmp/site
+      - name: Install angular-cli
+        npm: 
+          name: '@angular/cli'
+          global: yes
+      - name: Build distribution
+        command: ng build --prod --aot
+        args:
+          chdir: /tmp/site
+      - name: Move dist files
+        synchronize:
+          src: /tmp/site/dist/site/.
+          dest: /var/www/html
+        delegate_to: '{{ inventory_hostname }}'

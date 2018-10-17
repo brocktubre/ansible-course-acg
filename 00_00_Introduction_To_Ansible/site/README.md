@@ -1,27 +1,56 @@
-# Site
+# Let_the_Free_Times_Roll_BT
+An A Cloud Guru Maker Lab - 
+Let the Free Times Roll - Using AWS Continuous Deployment tools.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
+Manually uploading and deploying code to update applications is a thing of the past. Using AWS tools like CodePipeline, CodeBuild, & S3 students will build a system that allows them to write and push code that triggers seamless and automatic deployments. Students will also setup an email notification that is sent to developers if a status change is made in the build process using CloudWatch & SNS. Let the free times roll with Continuous Deployments.
+
+Prepared by [Brock Tubre](http://brocktubre.com) 2018
+
+Lab files for A Cloud Guru, Maker Lab - Let the Free Times Roll
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm run build -prod` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+## Deploy
+Using CodePipeline and CodeBuild we will configure the buildspec.yml in the root directory to deploy our build artificats to S3 using `aws s3 sync`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## What is covered?
+- Setting up Github Repository
+  - Fork A Cloud Guru, Maker Lab - Let the Free Times Roll repository code
+  - Push code to new personal repository
 
-## Running end-to-end tests
+- Setting up a CodePipeline
+  - Configure a new CodePipeline with CodeBuild
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Setting up a CodeBuild
+  - Configuring a new CodeBuild
 
-## Further help
+- Setting up S3
+  - Setting up S3 bucket for static hosting
+  - Attach policy to IAM role
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- View live Application
+
+- Setting up CloudWatch event and SNS Topic
+  - Create and subscribe to an SNS topic
+  - Configure CloudWatch event to trigger on status changes in CodeBuild
+  - See emails sent to subscribers to SNS topic
+
+Please note, this is provided as-is, neither I, nor A Cloud Guru support this code. If you do identify any errors, then please identify and we will attempt to fix on a best efforts basis.
+
+IMPORTANT - We recommend creating a new account or lab spece for this workshop. Using an existing account could cause damage or disruption to the resources in that account.
+
+
+
+## IMPORTANT
+These files are distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied
+
+
+## June 2018
+Initial Creation. Testing Notification System.
+
