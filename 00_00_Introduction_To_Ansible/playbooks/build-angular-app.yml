@@ -29,7 +29,7 @@
         command: ng build --prod --aot
         args:
           chdir: /tmp/site
-      - name: Move dist files
+      - name: Synchronize two directories on one remote host
         synchronize:
           src: /tmp/site/dist/site/.
           dest: /var/www/html
