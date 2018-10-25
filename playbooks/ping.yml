@@ -1,3 +1,4 @@
+# ping.yml
 ---
   - hosts: all
     tasks:
