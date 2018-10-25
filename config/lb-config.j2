@@ -2,7 +2,7 @@ ProxyRequests off
 <Proxy balancer://webcluster >
   {# {% for host in groups.webservers %} another way to call for loop #}
   {% for host in groups['webservers'] %}
-    BalancerMember http://{{host}}
+    BalancerMember http://{{ hostvars[host]['ansible_host']}}
   {% endfor %}
     ProxySet lbmethod=byrequests
 </Proxy>
