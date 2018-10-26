@@ -3,6 +3,6 @@
 ---
   - hosts: webservers:loadbalancers
     become: true
-    tasks:
-      - name: Updating yum packages
-        yum: name=* state=latest
+    roles:
+      - webservers
+      - loadbalancers

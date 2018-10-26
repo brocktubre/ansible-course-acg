@@ -1,0 +1,45 @@
+---
+# tasks file for roles/webservers
+- name: Updating yum packages
+  yum: name=* state=latest
+
+- name: Installing services
+  yum:
+    name: 
+      - httpd
+      - php
+    state: present
+
+- name: Ensure apache starts
+  service: name=httpd state=started enabled=yes
+
+- name: Upload application file
+  copy:
+    src: ../index.php
+    dest: "{{ path_to_app }}"
+    mode: 0755
+
+- name: Add webserver info
+  copy: 
+    dest: "{{ path_to_app }}/info.php"
+    content: "<h1> Here is some simple info: {{ ansible_default_ipv4.gateway }}. </h1>"
+
+- name: See contents
+  command: ls -la {{ path_to_app }}
+  register: dir_contents
+  
+- name: Debug some info
+  debug:
+    msg: "{{ dir_contents }}"
+
+- name: Configure php.ini file
+  lineinfile:
+    path: /etc/php.ini
+    regexp: ^short_open_tag
+    line: 'short_open_tag=On'
+  notify: restart apache
+
+- name: Check status of apache
+  command: service httpd status
+  args:
+    warn: no

@@ -1,0 +1,13 @@
+---
+  - hosts: local
+    vars:
+      epic: true
+      path_to_app: "/var/www/html"
+
+    tasks:
+    - shell: echo "This is epic!"
+      when: not epic
+    - debug: 
+        msg: "Path to app {{ path_to_app }}"
+    - debug: 
+        msg: "Testing inventory vars {{ foo.bar }} or {{ foo['bar']}}"
