@@ -1,0 +1,29 @@
+# aws-sandbox.yml
+---
+  - hosts: local
+    vars:
+      instance_ids:
+        - 'i-081cd41e7f997bd26'
+        - 'i-0e6a21e1c3818e44a'
+        - 'i-021df8decc031ebc6'
+      region: us-east-1
+      profile: AWSCliUser
+    tasks:
+      - name: Start ansible-sanbox instances
+        ec2:
+          instance_ids: '{{ instance_ids }}'
+          region: '{{ region }}'
+          profile: '{{ profile }}'
+          state: running
+          wait: True
+        tags: 
+          - start
+      - name: Stop ansible-sanbox instances
+        ec2:
+          instance_ids: '{{ instance_ids }}'
+          region: '{{ region }}'
+          profile: '{{ profile }}'
+          state: stopped
+          wait: True
+        tags:
+          - stop
