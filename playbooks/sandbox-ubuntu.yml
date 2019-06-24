@@ -1,0 +1,9 @@
+# sandbox-ubuntu.yml
+---
+  - hosts: webservers
+    become: true
+    tasks:
+      - name: Using apt update the packages
+        apt:
+          upgrade: yes
+          update_cache: yes

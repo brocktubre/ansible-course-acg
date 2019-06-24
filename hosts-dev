@@ -1,11 +1,11 @@
 # hosts-dev
 
 [webservers]
-app1 ansible_host=35.174.219.223
-app2 ansible_host=52.22.115.92
+app1 ansible_host=52.71.254.194 ansible_python_interpreter=/usr/bin/python3
+#app2 ansible_host-34.237.146.251
 
 [loadbalancers]
-lb1 ansible_host=34.198.140.15
+#lb1 ansible_host=35.171.1.231
 
 [local]
-control ansible_connection=local ansible_python_interpreter=/usr/local/bin/python/
+control ansible_connection=local
